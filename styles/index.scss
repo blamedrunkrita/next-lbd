@@ -1,0 +1,82 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "bootswatch";
+
+* {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+#root {
+  white-space: pre-wrap;
+  min-height:100vh;
+  
+}
+
+#content {
+  min-height: 100vh;
+}
+
+#main {
+  margin-top: 50px
+}
+
+#app {
+  min-height: 100vh
+}
+
+a , a:hover {
+  text-decoration: none;
+  color: black
+}
+
+#features-section {
+  background-color: $secondary;
+  text-align: center
+}
+
+#product-info-list p {
+  margin: 0;
+}
+
+#home h2 {
+  font-weight: 800;
+  font-size: 3em
+}
+
+#home h3 {
+  font-weight: 800;
+}
+
+#home h4 {
+  font-weight: 700;
+}
+
+#home p {
+  font-weight: 400;
+  font-size: 1em
+}
+
+#home h1 {
+  font-weight: 900;
+  font-size: 4em
+}
+
+.banner {
+  font-weight: 700
+}
+
+.title-text {
+  font-family: 'Special Elite', cursive;
+  
+}
+
+.thin-text {
+  font-weight: 400
+}
+
+.screen-width {
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0
+}

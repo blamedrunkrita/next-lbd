@@ -1,233 +1,111 @@
 import Head from 'next/head'
 import { connectToDatabase } from '../util/mongodb'
+import { Jumbotron, Button, Container, Fade, Row, Col, Image } from 'react-bootstrap'
+import Link from 'next/link'
+import ProductCarousel from '../components/ProductCarousel'
 
-export default function Home({ isConnected }) {
+export default function Home(props) {
+
+  const products = props.activities
+
   return (
-    <div className="container">
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>LBD | Stag, Hen and Group Activities in Lisbon</title>
+        <meta name="description" content="Best Tailored Stag, Hen and Group Weekends in Lisbon" />
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
-        </h1>
+        <Fade appear={true} in={true}>
+          <div id="home">
+            <section id="hero-section">
+              <Jumbotron className="text-center d-flex align-items-center justify-content-center" style={{
+                backgroundColor: '#FFF',
+                backgroundSize: "cover",
+                height: "95vh",
+                overflow: "hidden"
 
-        {isConnected ? (
-          <h2 className="subtitle">You are connected to MongoDB</h2>
-        ) : (
-          <h2 className="subtitle">
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
-            for instructions.
-          </h2>
-        )}
+              }}
+                fluid>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+                <video playsinline autoPlay muted loop height="inherit">
+                  <source src="/videos/Video_LBD.mp4" type="video/mp4"></source>
+                </video>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+                <Container className="position-absolute">
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+                  <h1 className="text-light mb-3 title-text">Tailored Stag, Hen and Group Weekends in Lisbon</h1>
+                  <Link href="/activities"><Button variant="outline-light" as="h3" >discover our activities</Button></Link>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+                </Container>
+              </Jumbotron>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+            </section>
+            <section id="best-activities-section" className="text-center my-5">
+              <Container>
+                <h2 className="text-center title-text">Our best ideas</h2>
+                <ProductCarousel products={products} />
+              </Container>
+            </section>
+            <section id="why-lisbon-section" >
+              <Jumbotron className="px-sm-0 px-md-4 py-5 text-center mb-2" style={{ background: 'url("/images/hero_why_lisbon.jpg") no-repeat center', backgroundSize: "cover" }}>
+                <Container>
+                  <h2 className="py-3 text-light title-text">Why Lisbon?</h2>
+                  <h4 className="text-light">Lisbon is the cheapest city break destination in Western Europe. Your low budget will take you a long way, especially if you have our help. </h4>
+                  <p className="h4 pb-3 text-light d-none d-sm-inline">Lisbon is ageless and authentic, full of bohemian and trendy places where people share all kinds of lifestyles. At night the streets come alive with music and wild crowds that don’t dissipate until morning. The sun shines 290 days a year making Lisbon the sunniest capital in Europe. Its location and the fact that the temperature rarely drops below 15ºC creates the perfect balance between beach and city life, and the most versatile scenery to fulfil any stag or hen weekend dream.</p>
+                </Container>
+              </Jumbotron>
+            </section>
+            <section id="how-to-section" className="text-center my-5">
+              <Container>
+                <h2 className="title-text">How to book with Last Bad Decision?</h2>
+                <h4>It's so easy our grandmas could do it!</h4>
+                <Row className="mt-5">
+                  <Col sm="4" className="mb-3 px-1">
+                    <Image src="/images/how_to1.png" height="85em" />
+                    <h4>The fun part</h4>
+                    <p className="h4">Browse our activities, create & customize your perfect plan and get an instant quote estimate.</p>
+                  </Col>
+                  <Col sm="4" className="mb-3 px-1">
+                    <Image src="/images/how_to2.png" height="85em" className="p-2" />
+                    <h4>Booking Confirmation</h4>
+                    <p className="h4">Send us your enquiry, get a final quote and make a small deposit to secure your reservation.</p>
+                  </Col>
+                  <Col sm="4" className="mb-3 px-1">
+                    <Image src="/images/how_to3.png" height="85em" className="p-3" />
+                    <h4>Pay Later</h4>
+                    <p className="h4">Make changes and adjustments without extra costs and pay closer to arrival.</p>
+                  </Col>
+                </Row>
+              </Container>
+            </section>
+            <section id="why-us-section" >
+              <Jumbotron className="px-sm-1 px-md-4 pt-5 text-center mb-n4 " style={{ background: 'url("/images/hero_why_us.jpg") no-repeat center', backgroundSize: "cover" }}>
+                <Container>
+                  <h2 className="text-light title-text py-3">Why Us?</h2>
+                  <h4 className="text-light">We are the only Local Weekend Organisers specialised in Stag & Hen Parties in Lisbon!</h4>
+                  <p className="h4 text-light h5-sm d-none d-sm-block">By skipping the middleman and booking directly with a local organiser you will save a lot of money. Besides, we know Lisbon first hand and we can advise you better than anyone about the best deals and experiences. Communication will be straightforward and changes will be hassle-free, even when it’s last minute.</p>
+                  <Link href="/activities"><Button variant="outline-light" as="h3" className="mt-4" >discover our activities</Button></Link>
+                </Container>
+              </Jumbotron>
+            </section>
+          </div>
+        </Fade >
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .subtitle {
-          font-size: 2rem;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
+    </>
   )
 }
 
-export async function getServerSideProps(context) {
-  const { client } = await connectToDatabase()
+export async function getStaticProps() {
+  const { db } = await connectToDatabase()
+  const activities = await db.collection("activities").find({}).toArray()
 
-  const isConnected = await client.isConnected()
-
-  return {
-    props: { isConnected },
-  }
+  return ({
+    props: {
+      activities: JSON.parse(JSON.stringify(activities)),
+    },
+    revalidate: 120
+  })
 }
+

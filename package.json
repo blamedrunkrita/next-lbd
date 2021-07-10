@@ -7,10 +7,29 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.6.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-switch-button-react": "^1.2.0",
+    "css-what": "^5.0.1",
+    "emailjs-com": "^2.6.4",
     "mongodb": "^3.5.9",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-bootstrap": "^1.4.3",
+    "react-bootstrap-date-picker": "^5.1.0",
+    "react-copy-to-clipboard": "^5.0.3",
+    "react-datepicker": "^3.7.0",
+    "react-dom": "^17.0.2",
+    "react-image-gallery": "^1.0.9",
+    "react-multi-carousel": "^2.6.2",
+    "react-router": "^5.2.0",
+    "react-router-bootstrap": "^0.25.0",
+    "sass": "^1.32.8",
+    "web-vitals": "^1.1.0"
   },
   "license": "MIT"
 }
