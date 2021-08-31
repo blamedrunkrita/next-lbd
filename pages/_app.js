@@ -9,9 +9,10 @@ import PlanContextProvider from "../contexts/PlanContext"
 function MyApp({ Component, pageProps }) {
   return <>
     <Head>
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#000000" />
+      <meta name="google-site-verification" content="med05raTWcVNROgsjVxvS6gq0DxG8iC1K2gUqE_qVTY" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
