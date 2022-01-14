@@ -87,7 +87,9 @@ const EnquireScreen = () => {
           totalPrice: item.totalPrice,
         }
 
-        parsedPlan += JSON.stringify(newItem) + "<br><br>"
+        parsedPlan += JSON.stringify(newItem, null, "&nbsp;")
+          .split("\n")
+          .join("<br>")
       })
     }
 
