@@ -103,7 +103,7 @@ const EnquireScreen = () => {
 
     console.log(templateParams.customerPlan)
 
-    emailjs.send("service_hpnbqeu", "template_o0z3jgg", templateParams).then(
+    emailjs.send("service_o6oxknd", "template_o0z3jgg", templateParams).then(
       function (response) {
         console.log("SUCCESS!", response.status, response.text)
       },
