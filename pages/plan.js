@@ -3,6 +3,7 @@ import { Button, Container, Jumbotron, Fade, Alert } from "react-bootstrap"
 import Link from "next/link"
 import PlanItem from "../components/PlanItem"
 import { PlanContext } from "../contexts/PlanContext"
+import Head from "next/head"
 
 const YourPlanScreen = () => {
   const { plan, resetPlan, removeItem } = useContext(PlanContext)
