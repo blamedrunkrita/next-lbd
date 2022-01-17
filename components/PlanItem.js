@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Col, Image, Row } from 'react-bootstrap'
+import React from "react"
+import { Button, Col, Image, Row } from "react-bootstrap"
 
 const PlanItem = ({ item, removeItem }) => {
   return (
@@ -12,28 +12,52 @@ const PlanItem = ({ item, removeItem }) => {
         <Col className="p-2" md="6">
           <p className="h5 ml-3">Breakdown</p>
           <ul style={{ listStyleType: "none" }}>
-            {!item.product.minPrice && <li>{"Base Value: " + item.product.priceFrom + "€ X " + item.numParticipants + " = " + item.product.priceFrom * item.numParticipants + "€"}</li>}
-            {item.extras && item.extras.map((extra) => {
-              if (extra.valuePP && extra.status) {
-                return <li>{`${extra.name}: ${extra.valuePP}€ X ${item.numParticipants} = ${extra.valuePP * item.numParticipants}€`}</li>
-              } else if (extra.status) {
-                return <li>{`${extra.name}: ${extra.value}€ X ${extra.counter} = ${extra.value * extra.counter}€`}</li>
-              } else {
-                return null
-              }
-            })}
+            {!item.product.minPrice && (
+              <li>
+                {"Base Value: " +
+                  item.product.priceFrom +
+                  "€ X " +
+                  item.numParticipants +
+                  " = " +
+                  item.product.priceFrom * item.numParticipants +
+                  "€"}
+              </li>
+            )}
+            {item.extras &&
+              item.extras.map((extra) => {
+                if (extra.valuePP && extra.status) {
+                  return (
+                    <li>{`${extra.name}${
+                      extra.pick && " (" + extra.pick + ")"
+                    }: ${extra.valuePP}€ X ${item.numParticipants} = ${
+                      extra.valuePP * item.numParticipants
+                    }€`}</li>
+                  )
+                } else if (extra.status) {
+                  return (
+                    <li>{`${extra.name}: ${extra.value}€ X ${extra.counter} = ${
+                      extra.value * extra.counter
+                    }€`}</li>
+                  )
+                } else {
+                  return null
+                }
+              })}
           </ul>
         </Col>
         <Col className="p-2 d-flex flex-column justify-content-end" md="3">
           <p className="h5 ml-3">{`Item Price:`}</p>
           <h3 className="text-right text-info">{item.totalPrice}€</h3>
-          <Button onClick={() => removeItem(item.id)} variant="danger" size="sm" block>Remove Item</Button>
+          <Button
+            onClick={() => removeItem(item.id)}
+            variant="danger"
+            size="sm"
+            block
+          >
+            Remove Item
+          </Button>
         </Col>
-
-
-
       </Row>
-
     </div>
   )
 }

@@ -80,18 +80,54 @@ const EnquireScreen = () => {
     let parsedPlan = ""
 
     if (enquiryType === "plan") {
-      plan.forEach((item) => {
-        let newItem = {
-          activity: item.product._id,
-          extras: item.extras && item.extras.filter((extra) => extra.status),
-          numParticipants: item.numParticipants,
-          totalPrice: item.totalPrice,
-        }
+      parsedPlan = plan
+        .map((item) => {
+          let base = ""
+          if (!item.product.minPrice) {
+            base =
+              "Base Value: " +
+              item.product.priceFrom +
+              "€ X " +
+              item.numParticipants +
+              " = " +
+              item.product.priceFrom * item.numParticipants +
+              "€"
+          }
 
-        parsedPlan += JSON.stringify(newItem, null, "&nbsp;")
-          .split("\n")
-          .join("<br>")
-      })
+          let rest = []
+
+          if (item.extras) {
+            rest = item.extras.map((extra) => {
+              if (extra.valuePP && extra.status) {
+                return `<li>${extra.name}${
+                  extra.pick && " (" + extra.pick + ")"
+                }: ${extra.valuePP}€ X ${item.numParticipants} = ${
+                  extra.valuePP * item.numParticipants
+                }€</li>`
+              } else if (extra.status) {
+                return `<li>${extra.name}${
+                  extra.pick && " (" + extra.pick + ")"
+                }: ${extra.value}€ X ${extra.counter} = ${
+                  extra.value * extra.counter
+                }€</li>`
+              } else {
+                return ""
+              }
+            })
+          }
+
+          console.log(rest, item.extras)
+
+          return (
+            `<label>${item.product.name}</label><ul>` +
+            (base ? `<li>${base}</li>` : "") +
+            rest.join("") +
+            "</ul>"
+          )
+        })
+        .join("")
+
+      console.log(parsedPlan)
     }
 
     var templateParams = {
