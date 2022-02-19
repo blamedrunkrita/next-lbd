@@ -12,7 +12,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>LBD | Privacy Policy</title>
+        <title>LBD | Terms & Conditions</title>
         <meta
           name="description"
           content="Craziest Tailored Stag, Hen and Group Weekends in Lisbon"
@@ -25,7 +25,7 @@ export default function Home(props) {
             <section id="terms&conditions" className="text-center mt-4">
               <Container>
                 <h1 className="title-text h3 border-bottom mb-0">
-                  Terms and Conditions
+                  Terms & Conditions
                 </h1>
                 <iframe
                   src={"/terms&conditions.html"}

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer id="footer">
       <Jumbotron className="bg-primary mb-0 px-0 pt-2 pb-1">
         <Container className="text-center text-secondary">
-          <div className="mb-2" style={{ fontSize: "2.5em" }}>
+          <div className="mb-2" style={{ fontSize: "2em" }}>
             <a
               className="mx-5"
               target="blank"
@@ -31,7 +31,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <Nav className="justify-content-center h6 mt-2">
+          <Nav className="justify-content-center h6 mb-1">
             <Nav.Item>
               <Link href="/" passHref>
                 <Nav.Link className="text-light">Home</Nav.Link>
@@ -68,9 +68,9 @@ const Footer = () => {
               </Link>
             </Nav.Item>
           </Nav>
-          <br></br>
+
           <Image src="/images/logo_white.png" alt="logo-white" height="50" />
-          <p id="signature" className="mt-3 text-light">
+          <p id="signature" className="mt-3 h6 text-light">
             Developed by | <span className="text-secondary">MarioJS</span>
           </p>
         </Container>

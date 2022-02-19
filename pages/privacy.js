@@ -23,7 +23,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>LBD | Terms and Conditions</title>
+        <title>LBD | Privacy Policy</title>
         <meta
           name="description"
           content="Craziest Tailored Stag, Hen and Group Weekends in Lisbon"
