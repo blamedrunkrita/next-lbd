@@ -5,7 +5,7 @@ import Link from "next/link"
 const Product = ({ product, noDescription, miniature }) => {
   return (
     <div className="shadow-sm">
-      <Link href={`/activities/${product._id}`} replace={true} passHref>
+      <Link href={`/activities/${product._id}`} passHref>
         <a>
           <Jumbotron
             style={{ height: "4em" }}
