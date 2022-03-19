@@ -53,6 +53,18 @@ export default function Home(props) {
                     </Button>
                   </Link>
                 </Container>
+                <a
+                  className="d-inline-block align-top my-n2 position-absolute"
+                  style={{ top: "10%", right: 0, height: "25%" }}
+                  href="https://thawards.com/?p=242217"
+                  target={"_blank"}
+                >
+                  <img
+                    src="/images/2020-winners-badge.png"
+                    alt="logo.png"
+                    height="100%"
+                  ></img>
+                </a>
               </Jumbotron>
             </section>
             <section id="best-activities-section" className="text-center my-5">
