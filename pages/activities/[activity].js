@@ -162,7 +162,7 @@ const ProductScreen = (props) => {
               </Col>
               <Col className="text-center" md="6">
                 <Button
-                  disabled={added}
+                  disabled={added || product.soldOut}
                   onClick={() => {
                     addItem(
                       JSON.parse(
@@ -184,9 +184,15 @@ const ProductScreen = (props) => {
                   variant="info"
                   block
                 >
-                  <h3 className="text-light mb-0">
-                    Add to plan <i className="fas fa-calendar-plus" />
-                  </h3>
+                  {product.soldOut ? (
+                    <h3 className="text-light mb-0">
+                      Add to plan <i className="fas fa-calendar-plus" />
+                    </h3>
+                  ) : (
+                    <h3 className="text-light mb-0">
+                      Currently Sold Out! <i className="fas fa-calendar-plus" />
+                    </h3>
+                  )}
                 </Button>
                 {added && (
                   <>

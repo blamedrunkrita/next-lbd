@@ -40,14 +40,21 @@ const Product = ({ product, noDescription, miniature }) => {
                 transform: "translate(0%, -100%)",
               }}
             >
-              from{" "}
-              <span className="text-light h5 text-end">
-                {product.minPrice
-                  ? product.minPrice + "€"
-                  : product.pricePP
-                  ? product.priceFrom + "€ pp"
-                  : product.priceFrom + "€"}
-              </span>
+              {product.soldOut ? (
+                <span className="text-light h5 text-end">Sold Out!</span>
+              ) : (
+                <>
+                  {" "}
+                  from{" "}
+                  <span className="text-light h5 text-end">
+                    {product.minPrice
+                      ? product.minPrice + "€"
+                      : product.pricePP
+                      ? product.priceFrom + "€ pp"
+                      : product.priceFrom + "€"}
+                  </span>
+                </>
+              )}
             </p>
           </div>
           {!noDescription && (
