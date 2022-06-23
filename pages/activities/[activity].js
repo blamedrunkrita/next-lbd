@@ -184,7 +184,7 @@ const ProductScreen = (props) => {
                   variant="info"
                   block
                 >
-                  {product.soldOut ? (
+                  {!product.soldOut ? (
                     <h3 className="text-light mb-0">
                       Add to plan <i className="fas fa-calendar-plus" />
                     </h3>
