@@ -14,7 +14,6 @@ import { PlanContext } from "../../contexts/PlanContext"
 import emailjs, { init } from "emailjs-com"
 import DatePicker from "react-datepicker"
 import { useRouter } from "next/router"
-import { connectToDatabase } from "../../util/mongodb"
 
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -62,10 +61,9 @@ const EnquireScreen = () => {
   }, [plan])
 
   const log_enquiry = async (enquiry) => {
-    const { db } = await connectToDatabase()
-    db.collection("enquiries").insertOne({
-      timestamp: new Date().toISOString(),
-      enqury,
+    fetch("/api/log_enquiry", {
+      method: "POST",
+      body: JSON.stringify({ payload: enquiry }),
     })
   }
 
