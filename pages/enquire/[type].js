@@ -14,6 +14,7 @@ import { PlanContext } from "../../contexts/PlanContext"
 import emailjs, { init } from "emailjs-com"
 import DatePicker from "react-datepicker"
 import { useRouter } from "next/router"
+import { connectToDatabase } from "../../util/mongodb"
 
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -59,6 +60,14 @@ const EnquireScreen = () => {
     plan.forEach((item) => (newPlanPrice += item.totalPrice))
     setPlanPrice(newPlanPrice)
   }, [plan])
+
+  const log_enquiry = async (enquiry) => {
+    const { db } = await connectToDatabase()
+    db.collection("enquiries").insertOne({
+      timestamp: new Date().toISOString(),
+      enqury,
+    })
+  }
 
   const handleChange = (e) => {
     let newUpdate = { ...info }
@@ -139,6 +148,8 @@ const EnquireScreen = () => {
     }
 
     console.log(templateParams.customerPlan)
+
+    log_enquiry(templateParams)
 
     emailjs.send("service_o6oxknd", "template_o0z3jgg", templateParams).then(
       function (response) {
