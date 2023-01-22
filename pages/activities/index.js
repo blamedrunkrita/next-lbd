@@ -25,7 +25,7 @@ const Activities = (props) => {
   return (
     <>
       <Head>
-        <title>LBD | Our Activities in Lisbon</title>
+        <title>Last Bad Decision | Our Activities in Lisbon</title>
         <meta
           name="description"
           content="Check all our tailored Stag, Hen and Group activities in Lisbon"
@@ -173,6 +173,7 @@ export async function getStaticProps() {
     })
   })
   let sortedActivities = activities
+    .filter((act) => (act.archived ? false : true))
     .sort((a, b) => {
       if (a.name > b.name) {
         return 1

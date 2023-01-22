@@ -32,7 +32,7 @@ const ProductScreen = (props) => {
     return (
       <>
         <Head>
-          <title>LBD | {product.name}</title>
+          <title>Last Bad Decision | {product.name}</title>
           <meta name="description" content={product.shortDescription} />
         </Head>
         <Fade appear={true} in={true}>
@@ -309,11 +309,13 @@ export async function getStaticPaths() {
   const { db } = await connectToDatabase()
   const activities = await db.collection("activities").find({}).toArray()
 
-  const paths = activities.map((activity) => {
-    return {
-      params: { activity: activity._id },
-    }
-  })
+  const paths = activities
+    .filter((act) => (act.archived == true ? -1 : true))
+    .map((activity) => {
+      return {
+        params: { activity: activity._id },
+      }
+    })
 
   return {
     paths,
