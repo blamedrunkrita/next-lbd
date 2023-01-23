@@ -12,7 +12,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>LBD | Terms & Conditions</title>
+        <title>Last Bad Decision | Terms & Conditions</title>
         <meta
           name="description"
           content="Craziest Tailored Stag, Hen and Group Weekends in Lisbon"

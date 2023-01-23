@@ -18,7 +18,9 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>LBD | Stag, Hen and Group Activities in Lisbon</title>
+        <title>
+          Last Bad Decision | Stag, Hen and Group Activities in Lisbon
+        </title>
         <meta
           name="description"
           content="Craziest Tailored Stag, Hen and Group Weekends in Lisbon"

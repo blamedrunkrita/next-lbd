@@ -14,7 +14,7 @@ const AboutScreen = () => {
   return (
     <>
       <Head>
-        <title>LBD | About Us</title>
+        <title>Last Bad Decision | About Us</title>
         <meta
           name="description"
           content={"Who we are, what we do and why we do it!"}

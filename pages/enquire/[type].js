@@ -162,7 +162,7 @@ const EnquireScreen = () => {
   return (
     <>
       <Head>
-        <title>LBD | Enquire</title>
+        <title>Last Bad Decision | Enquire</title>
         <meta
           name="description"
           content={"Send an Enquiry to Last Bad Decision"}

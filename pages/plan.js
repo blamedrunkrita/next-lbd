@@ -18,10 +18,10 @@ const YourPlanScreen = () => {
   return (
     <>
       <Head>
-        <title>LBD | About Us</title>
+        <title>Last Bad Decision | Your Plan</title>
         <meta
           name="description"
-          content={"Who we are, what we do and why we do it!"}
+          content={"The first draft of your unique experience!"}
         />
       </Head>
       <Fade appear={true} in={true}>
