@@ -20,6 +20,8 @@ import { AddExtraSingle } from "../../components/AddExtraSingle"
 import { AddPickFrom } from "../../components/AddPickFrom"
 import AutoGallery from "../../components/AutoGallery.js"
 
+import { connectToDatabase } from "../../util/mongodb.js"
+
 const ProductScreen = (props) => {
   const product = props.activity
   const [numParticipants, setNumParticipants] = useState(1)
