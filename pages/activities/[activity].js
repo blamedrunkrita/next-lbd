@@ -118,7 +118,9 @@ const ProductScreen = (props) => {
                     product.proTips.map((tip) => {
                       return (
                         <div className="my-2">
-                          <h6 className="my-0">{tip.name}</h6>
+                          <h6 className="my-0">
+                            <strong>{tip.name}</strong>
+                          </h6>
                           <p className="h6 my-0">{tip.content}</p>
                         </div>
                       )
