@@ -17,6 +17,8 @@ import { useRouter } from "next/router"
 
 import "react-datepicker/dist/react-datepicker.css"
 
+const EMAILJS_SERVICE = 'service_bxw9poc';
+
 const EnquireScreen = () => {
   const router = useRouter()
   const { plan } = useContext(PlanContext)
@@ -149,7 +151,7 @@ const EnquireScreen = () => {
 
     log_enquiry(templateParams)
 
-    emailjs.send("service_o6oxknd", "template_o0z3jgg", templateParams).then(
+    emailjs.send(EMAILJS_SERVICE, "template_o0z3jgg", templateParams).then(
       function (response) {
         console.log("SUCCESS!", response.status, response.text)
       },
