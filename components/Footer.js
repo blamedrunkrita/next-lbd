@@ -25,7 +25,7 @@ const Footer = () => {
             <a
               className="mx-5"
               target="blank"
-              href="https://api.whatsapp.com/send?phone=351914054039&text=Hi!%20I%27m%20interested%20in%20some%20of%20the%20Last%20Bad%20Decision%20activities."
+              href="https://api.whatsapp.com/send?phone=+351928146060&text=Hi!%20I%27m%20interested%20in%20some%20of%20the%20Last%20Bad%20Decision%20activities."
             >
               <i className="fa fa-whatsapp text-light" />
             </a>
